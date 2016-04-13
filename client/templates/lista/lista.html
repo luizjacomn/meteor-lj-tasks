@@ -1,0 +1,19 @@
+<template name="lista">
+  <h1 class="center">Tarefas</h1>
+  <ul class="collection">
+    {{#each tarefas}}
+      <li class="collection-item">
+        <div class="row sem-margin-bottom">
+          <div class="col s9 m11 l11">
+            <span class="{{isCheck}}">{{nome}}</span>
+          </div>
+
+          <div class="col s3 m1 l1">
+            <input type="checkbox" id="{{_id}}" checked="{{status}}">
+            <label for="{{_id}}"></label>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</template>
