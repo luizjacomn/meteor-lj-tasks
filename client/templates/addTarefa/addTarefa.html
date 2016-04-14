@@ -1,7 +1,13 @@
 <template name="addTarefa">
       <form id="form_add" class="col s12">
         <div class="row">
-          <div class="input-field col s12">
+          <div class="col s2 m1">
+            <a id="addBtn" class="btn-floating btn-small waves-effect waves-light black tooltipped"
+            data-position="left" data-delay="50" data-tooltip="Adicionar Tarefa!"><i class="mdi-content-add"></i></a>
+
+          </div>
+
+          <div class="input-field col s10 m11 sem-margem-top">
             <input id="tarefa" type="text" class="validate">
             <label for="tarefa"><!--<i class="material-icons left">play_arrow</i>-->Adicionar Tarefa</label>
           </div>

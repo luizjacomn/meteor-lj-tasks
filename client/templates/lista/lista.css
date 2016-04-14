@@ -5,3 +5,17 @@
 .sem-margin-bottom {
   margin-bottom: 0px !important;
 }
+
+.espaco-btn {
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
+.espaco-btn i{
+  line-height: 30px !important;
+}
+
+.editarTarefa {
+  margin-right: 10px !important;
+}

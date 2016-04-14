@@ -4,13 +4,22 @@
     {{#each tarefas}}
       <li class="collection-item">
         <div class="row sem-margin-bottom">
-          <div class="col s9 m11 l11">
+          <div class="col s7 m9">
             <span class="{{isCheck}}">{{nome}}</span>
           </div>
 
-          <div class="col s3 m1 l1">
+          <div class="col s5 m3">
+
+            <a data-tooltip="Remover Tarefa!" class="btn-floating waves-effect waves-light black btn-small right btn tooltipped removerTarefa"
+              data-position="top">
+              <i class="mdi-navigation-close"></i></a>
+
+            <a data-tooltip="Editar Tarefa!" class="btn-floating waves-effect waves-light black btn-small right btn tooltipped editarTarefa"
+              data-position="top">
+              <i class="mdi-editor-mode-edit"></i></a>
+
             <input type="checkbox" id="{{_id}}" checked="{{status}}">
-            <label for="{{_id}}"></label>
+            <label data-tooltip="Status" class="right tooltipped" data-position="top" for="{{_id}}"></label>
           </div>
         </div>
       </li>
