@@ -1,12 +1,19 @@
 Template.addTarefa.events({
   'submit #form_add, click #addBtn': function(evento) {
     evento.preventDefault()
-    Tarefas.insert({
-      nome: $('#tarefa').val(),//evento.target.tarefa.value,
+    Meteor.call("addTarefa", {
+      nome: $('#tarefa').val(),
       status: false
-    })
+    },
+  function(error, result) {
+    if (error) {
+      Materialize.toast('Erro!', 3000, 'red')
+    }
+    if (result) {
+      Materialize.toast('Tarefa Adicionada!', 3000, 'green')
+    }
+  });
     nome: $('#tarefa').val('')
-    Materialize.toast('Tarefa Adicionada!', 4000)
     //evento.target.tarefa.value = ''
   }
 })

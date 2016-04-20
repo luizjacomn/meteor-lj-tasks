@@ -1,14 +1,19 @@
 <template name="lista">
   <h1 class="center">Tarefas</h1>
-  <ul class="collection">
+  <div class="row">
+    <div class="col s12 m6">
+  <ul class="collection with-header">
+    <li class="collection-header red center"><h6>A Fazer</h6></li>
     {{#each tarefas}}
+      {{#unless status}}
+
       <li class="collection-item">
         <div class="row sem-margin-bottom">
-          <div class="col s7 m9">
-            <span class="{{isCheck}}">{{nome}}</span>
+          <div class="col s6 m7">
+            <span>{{nome}}</span>
           </div>
 
-          <div class="col s5 m3">
+          <div class="col s6 m5">
 
             <a data-tooltip="Remover Tarefa!" class="btn-floating waves-effect waves-light black btn-small right btn tooltipped removerTarefa"
               data-position="top">
@@ -23,6 +28,40 @@
           </div>
         </div>
       </li>
+      {{/unless}}
     {{/each}}
   </ul>
+</div>
+
+<div class="col s12 m6">
+<ul class="collection with-header">
+  <li class="collection-header green center"><h6>Concluído</h6></li>
+  {{#each tarefas}}
+    {{#if status}}
+
+    <li class="collection-item">
+      <div class="row sem-margin-bottom">
+        <div class="col s6 m7">
+          <span>{{nome}}</span>
+        </div>
+
+        <div class="col s6 m5">
+
+          <a class="btn-floating waves-effect waves-light black btn-small right btn removerTarefa">
+            <i class="mdi-navigation-close"></i></a>
+
+          <a class="btn-floating waves-effect waves-light black btn-small right btn editarTarefa">
+            <i class="mdi-editor-mode-edit"></i></a>
+
+          <input type="checkbox" id="{{_id}}" checked="{{status}}">
+          <label class="right" for="{{_id}}"></label>
+        </div>
+      </div>
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+</div>
+</div>
 </template>
